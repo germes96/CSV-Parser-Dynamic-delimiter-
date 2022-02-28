@@ -1,7 +1,6 @@
-
+import argparse
 #importing pandas as pd
 import pandas as pd
-import csv
 
 
 def print_hi(name):
@@ -11,9 +10,14 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-    read_file = pd.read_excel("catalog.xlsx")
-    read_file.to_csv("catalog.csv",
+    parser = argparse.ArgumentParser(description="EXCEL CSV Conviter with specific delimiter")
+    parser.add_argument("-i", type=str, default="catalog.xlsx", help="Input file excel format")
+    parser.add_argument("-o", type=str, default="result.csv", help="output file")
+    parser.add_argument("-d", type=str, default="|", help="number of training epoch")
+    args = parser.parse_args()
+    print('PyCharm')
+    read_file = pd.read_excel(args.i)
+    read_file.to_csv(args.o,
                      index=None,
-                     sep="|",
+                     sep=args.d,
                      header=True)
