@@ -5,6 +5,13 @@ This is in order to take into account the content generally provided in excel fi
 
 This python library will allow you to do this conversion by specifying more complex delimiters `('|', '$', '#')`. This will make it easier to process in your different server codes...etc. 
 
+## Installation
+```commandline
+git clone <repository.git>
+cd <repository>
+pip install requiement.txt
+```
+
 ## Basic usage
 ```commandline
 python main.py
